@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mathlib Atlas — A Statistical Atlas of Formal Mathematics</title>
+  <title>Mathlib Metaanalysis - Statistical Properties of Formal Math Libraries</title>
   <style>
     :root {
       --navy:   #0f1f3d;
@@ -346,6 +346,7 @@
     Mathlib is the world's largest library of formally verified mathematics, written in Lean 4.
     Every theorem in Mathlib has been checked by a proof assistant down to foundational axioms —
     making it a uniquely trustworthy dataset for studying how mathematics is actually structured.
+    Proof formalization libraries like mathlib provide an exciting array of new possibilities, including having a centralized locus of verified mathematical knowledge, training data for LLMs and proof formalizers. These developments bring to the forefront old questions in a new format regarding what mathematics is and how it is practiced and taught. Fortunately, I think that libraries of formalized theorems can help us gain empirical evidence towards answering these questions more satisfactorily. This project is a very small step into what I believe will be a field of increasing importance, namely mathematical metaanalysis.   
   </p>
   <div class="card-grid card-grid-3">
     <div class="card">
@@ -405,7 +406,7 @@
   <div class="callout">
     We construct the full transitive dependency graph across all of Mathlib, join it with
     docstrings and source positions from GitHub, and run statistical analyses comparing
-    named vs. unnamed theorems — all without requiring a Lean installation.
+    named vs. unnamed theorems.
   </div>
 
   <div class="card-grid card-grid-2" style="margin-top: 1.5rem;">
@@ -447,8 +448,8 @@
   <p class="lead">
     In-degree (the number of other proofs that directly depend on a theorem) is the
     most direct proxy for mathematical importance within a formal library.
-    The rankings reveal which algebraic identities and logical primitives form the
-    true backbone of modern mathematics.
+    In the future, this analysis can be expanded to perform more 
+    sophisticated statistical analyses and make large AI generated theorem libraries human interpretable.
   </p>
 
   <div class="callout">
@@ -516,8 +517,8 @@
       <div class="tab-content" id="content2">
         <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">
           <strong>Primitive concepts</strong> are declarations with no outgoing dependency edges —
-          leaves of the DAG. Despite having nothing beneath them, many are cited thousands of times.
-          These are the true axioms and automation-closed lemmas that underpin all of Mathlib.
+          leaves of the DAG. (This is partly determined by how sensitive the dependency generator is, determining line by line 
+          dependency for term mode proofs was not that easy and could be made to detect more dependencies.)
         </p>
         <div class="table-wrap">
           <table>
@@ -685,7 +686,7 @@
   <p class="lead">
     Despite hundreds of transitive dependencies, proof chains in Mathlib are
     surprisingly shallow. Even the most complex theorems have longest chains
-    of only 10–15 steps — a remarkable property of formal mathematics.
+    of only 10–15 steps (again this is partly due to the limitation in detecting dependency between very simple lemmas).
   </p>
   <div class="card-grid card-grid-3">
     <div class="card">
@@ -731,7 +732,7 @@
   <div class="essay-box">
     <div class="essay-icon">📝</div>
     <div>
-      <h3>Essay: Formal Mathematics and the Knowledge Graph Revolution</h3>
+      <h3>Essay: Framing the New Mathematical Paradigm</h3>
       <p>
         This project grew from a conviction that formal proof libraries like Mathlib are not
         just verification tools — they are the first machine-readable maps of mathematical
@@ -741,7 +742,7 @@
         implications for AI systems that reason about mathematics, for curriculum design,
         and for how we understand the sociology of mathematical discovery.
       </p>
-      <a class="btn btn-primary" href="essay.html" style="margin-top:1rem;display:inline-flex;">
+      <a class="btn btn-primary" href="https://matthewbhattacharya.substack.com/p/framing-the-new-mathematical-paradigm" style="margin-top:1rem;display:inline-flex;">
         Read Full Essay →
       </a>
     </div>
